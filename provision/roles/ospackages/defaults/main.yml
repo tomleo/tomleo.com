@@ -1,0 +1,8 @@
+---
+
+update_apt_cache: yes
+python2_venv_path: '/home/vagrant/py2venv/'
+python3_venv_path: '/home/vagrant/py3venv/'
+work_path: '/home/vagrant/tomleo/'
+runserver_port: '8080'
+

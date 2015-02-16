@@ -1,0 +1,8 @@
+py2venv/
+py3venv/
+*.pyc
+*.swp
+test_yaml.py
+.vagrant/
+config/
+*.sqlite3

@@ -1,0 +1,5 @@
+---
+
+requirements_file: /home/vagrant/tomleo/requirements.txt
+py2_venv_path: /home/vagrant/py2venv
+py3_venv_path: /home/vagrant/py3venv

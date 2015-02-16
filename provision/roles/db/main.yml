@@ -1,0 +1,11 @@
+---
+# Need to configure postgresql with postgis to do the cool things
+
+- name: Migrate
+  django_manage: >
+      command=migrate
+      app_path={{ app_path }}
+      settings={{ settings_dotted_path }}
+      pythonpath={{ python_path }}
+      virtualenv={{ py3_venv }}
+

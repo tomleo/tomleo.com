@@ -1,0 +1,7 @@
+---
+
+app_path: /home/vagrant/tomleo
+settings_dotted_path: 'tomleo.settings'
+python_path: /home/vagrant/py2venv
+py3_venv: /home/vagrant/py3venv
+

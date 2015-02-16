@@ -1,0 +1,45 @@
+---
+# Downloading all required Ubuntu libraries
+
+- name: Install bash
+  apt: name={{ item }} update_cache={{ update_apt_cache }} state=latest
+  with_items:
+    - bash
+  tags: packages
+
+- name: Install base packages
+  apt: name={{ item }} update_cache={{ update_apt_cache }} force=yes state=installed
+  with_items:
+    - git
+    - build-essential
+    - python-dev
+    - python-pip
+    - libxml2-dev
+    - libxslt1-dev
+    - libbz2-dev
+    - libgdbm-dev
+    - libncurses5-dev
+    - tk-dev
+    - libreadline-dev
+    - nfs-common
+    - portmap
+    - libjpeg-dev
+    - nodejs
+    - nodejs-dev
+    - npm
+    - python3.4
+    - python-virtualenv
+  tags: packages
+
+- name: Create symbolic link to fix nodejs
+  file: src=/usr/bin/nodejs dest=/usr/bin/node state=link
+
+- name: Alias for Environment
+  lineinfile: dest=/home/vagrant/.bashrc line='alias venv="source {{ python3_venv_path }}/bin/activate"'
+
+- name: Alias for Py2 Environment
+  lineinfile: dest=/home/vagrant/.bashrc line='alias venv="source {{ python2_venv_path }}/bin/activate"'
+
+- name: Alias for Runserver
+  lineinfile: dest=/home/vagrant/.bashrc line='alias runserver="python {{ work_path }}manage.py runserver 0.0.0.0:{{ runserver_port }}"'
+

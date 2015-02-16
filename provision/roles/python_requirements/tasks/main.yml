@@ -1,0 +1,12 @@
+---
+# Installing all requirements files
+
+#- name: Create Py2 requirements folder
+#  command: creates={{ py2_venv_path }}
+
+- name: Install Py2 requirements
+  pip: requirements={{ requirements_file }} virtualenv={{ py2_venv_path }}
+
+- name: Install Py3 requirements
+  pip: requirements={{ requirements_file }} virtualenv={{ py3_venv_path }}
+

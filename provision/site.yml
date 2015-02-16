@@ -1,0 +1,13 @@
+---
+# Deploys basic Django Stack
+
+- name: Install all the things
+  hosts: all
+  sudo: yes
+  sudo_user: root
+  remote_user: vagrant
+  roles:
+      - ospackages
+      - python_requirements
+      - db
+
