@@ -4,10 +4,17 @@
 #
 # Will also merge in content from:
 # - https://github.com/tomleo/CactusBlog
+# 
+# Progress:
+# - merged https://bitbucket.org/TomLeo/tomleo3000
+# - removed https://bitbucket.org/TomLeo/tblog
+# - removed https://bitbucket.org/TomLeo/pelican-blog
+#
+# Leaving Along for now:
 # - https://bitbucket.org/TomLeo/blog.tomleo.com
+#   This is a statically generated blog using Pelican
 # - https://bitbucket.org/TomLeo/tumblrpy
-# - https://bitbucket.org/TomLeo/pelican-blog
-# - https://bitbucket.org/TomLeo/tblog
+#   This converts all tumblr posts into stand-alone HTML pages
 
 REMOTE_REPO=git@github.com:tomleo/tomleo.com.git
 
