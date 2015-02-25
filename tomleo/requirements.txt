@@ -3,3 +3,5 @@ PyYAML==3.11
 djangorestframework==3.0.4
 ipdb==0.8
 ipython==2.4.0
+fake-factory==0.5.0
+factory-boy==2.4.1
