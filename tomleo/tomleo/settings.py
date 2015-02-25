@@ -11,6 +11,17 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJ_DIR = os.path.abspath(os.path.join(BASE_DIR, '../config'))
+
+from yaml import load, dump
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
+
+conf_settings = None
+with open(os.path.join(PROJ_DIR, 'secrets.yml'), 'r') as f:
+    conf_settings = load(f, Loader=Loader)
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,24 +40,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-)
-
-MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+INSTALLED_APPS = conf_settings.get('installed_apps')
+MIDDLEWARE_CLASSES = conf_settings.get('middleware_classes')
 
 ROOT_URLCONF = 'tomleo.urls'
 
@@ -56,10 +51,11 @@ WSGI_APPLICATION = 'tomleo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
 
+db_settings = conf_settings['databases']
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': db_settings['default']['type'],
+        'NAME': os.path.join(BASE_DIR, db_settings['default']['name']),
     }
 }
 
