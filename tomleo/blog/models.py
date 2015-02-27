@@ -10,7 +10,16 @@ class Post(models.Model):
     published = models.DateTimeField()
     intro = models.CharField(max_length=255)
     content = models.TextField()
-
+    #TODO: add file field for Plain text files (support for RST, Markdown, and Latex)
+    # 1. rst files will be read, meta data will be parsed to populate other Post fields
+    # 2. rst file will be updated to include meta data on the Post object in the database
+    #
+    # This will allow for plain text ReStructuredText representations of Post objects.
+    # Maintaining RST files (potentially version controlled) will allow other
+    # colaberators to submit edits to blog posts via Github.
+    #
+    # TODO: figure out how images and files embended inside RST files should be
+    # stored in the database (base64 encode them?)
     class Meta:
         ordering = ['published', 'title']
 
