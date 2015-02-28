@@ -6,3 +6,4 @@ test_yaml.py
 .vagrant/
 config/
 *.sqlite3
+.coverage
