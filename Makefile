@@ -1,6 +1,6 @@
 # This project is intentended to work with both Python 2.7 and Python 3.4
 #
-# It will be a merge of https://bitbucket.org/TomLeo/tomleo3000 and https://github.com/tomleo/tomleo.com
+# Need to merge https://github.com/tomleo/tomleo.com into this repo
 #
 # Will also merge in content from:
 # - https://github.com/tomleo/CactusBlog
@@ -57,4 +57,7 @@ py2venv:
 
 py3venv:
 	py3venv py3venv
+
+serve:
+	waitress-serve --port=$PORT tomtleo.wsgi:application
 
