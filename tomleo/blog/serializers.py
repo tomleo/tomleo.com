@@ -20,3 +20,11 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
         #TODO: custom logic to parse rst files
         super(Post, self).save(*args, **kwargs)
 
+class ReStructuredTextSerializer(serializers.ModelSerializer):
+
+    rst_file = serializers.FileField()
+
+    class Meta:
+        model = Post
+        fields = ('author', 'title', 'intro', 'content')
+
