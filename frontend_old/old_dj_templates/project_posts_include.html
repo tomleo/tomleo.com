@@ -1,0 +1,11 @@
+{% load url from future %}
+<ul role="navigation" class="project-list">
+    {% for Project in Projects %}
+    <li>
+        <a href="{% url 'project' Project.id Project.slug %}">
+            {{ Project.title }}
+        </a>
+        {% for tag in Project.tags.all %}tag{%endfor%}
+    </li>
+    {% endfor %}
+</ul>

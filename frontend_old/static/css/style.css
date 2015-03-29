@@ -1,0 +1,264 @@
+/* font-face */
+@font-face {
+  font-family: "Websymbols";
+  src: url("../fonts/websymbolsligaregular.eot");
+  src: url("../fonts/websymbolsligaregular.eot?#iefix") format("embedded-opentype"), url("../fonts/websymbolsligaregular.woff") format("woff"), url("../fonts/websymbolsligaregular.ttf") format("truetype"), url("../fonts/websymbolsligaregular.svg#Websymbols") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* global foundicon styles */
+/* line 8, ../sass/_icons.scss */
+[class*="foundicon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+  color: rgba(86, 86, 86, 0.2);
+}
+
+/* line 20, ../sass/_icons.scss */
+[class*="foundicon-"]:before {
+  font-family: "Websymbols";
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+/* line 27, ../sass/_icons.scss */
+.foundicon-resume:before {
+  content: '\006D';
+}
+
+/* line 31, ../sass/_icons.scss */
+.foundicon-twitter:before {
+  content: '\00E5';
+}
+
+/* line 35, ../sass/_icons.scss */
+.foundicon-linkedin:before {
+  content: '\00E7';
+}
+
+/* line 39, ../sass/_icons.scss */
+.foundicon-github:before {
+  content: '\0052';
+}
+
+/* line 43, ../sass/_icons.scss */
+.foundicon-bitbucket:before {
+  content: '\005F';
+}
+
+/* line 47, ../sass/_icons.scss */
+.foundicon-tumblr:before {
+  content: '\0052';
+}
+
+/* line 51, ../sass/_icons.scss */
+.foundicon-google-plus:before {
+  content: '\0050';
+}
+
+/* line 55, ../sass/_icons.scss */
+.foundicon-delicious:before {
+  content: '\006F';
+}
+
+@-webkit-viewport { width : device-width; };
+@-moz-viewport { width : device-width; };
+@-ms-viewport { width : device-width; };
+@-o-viewport { width : device-width; };
+@viewport { width : device-width; };
+/* line 66, ../sass/style.sass */
+.clearfix {
+  *zoom: 1;
+}
+/* line 59, ../sass/style.sass */
+.clearfix:before, .clearfix:after {
+  display: table;
+  content: "";
+}
+/* line 63, ../sass/style.sass */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 70, ../sass/style.sass */
+html {
+  background: #ececec;
+  font-size: 62.5%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: #f3f5f6;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+/* line 78, ../sass/style.sass */
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+  color: #565656;
+}
+
+/* line 88, ../sass/style.sass */
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+/* line 92, ../sass/style.sass */
+p {
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", Lucida, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+/* line 96, ../sass/style.sass */
+pre {
+  font-family: "Source Code Pro", Monaco, Courier New, monospace;
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+/* line 100, ../sass/style.sass */
+img {
+  max-width: 100%;
+  border-width: 0;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 108, ../sass/style.sass */
+.list-bordered {
+  list-style-type: none;
+  margin: 0 0 1.5em 0;
+  padding: 0;
+}
+/* line 112, ../sass/style.sass */
+.list-bordered li {
+  margin-bottom: 0.375em;
+  padding-bottom: 0.375em;
+  border-bottom: 1px dashed #c7ced6;
+}
+/* line 116, ../sass/style.sass */
+.list-bordered li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom-width: 0;
+}
+
+/* line 121, ../sass/style.sass */
+.inline-block-list {
+  margin-top: 50px;
+}
+/* line 123, ../sass/style.sass */
+.inline-block-list a {
+  color: #565656;
+  text-decoration: none;
+}
+/* line 126, ../sass/style.sass */
+.inline-block-list li {
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  min-height: 100px;
+  padding: 0 0 25px 0;
+}
+/* line 132, ../sass/style.sass */
+.inline-block-list li [class*="foundicon"] {
+  width: 100%;
+  height: 1em;
+  font-size: 80px;
+}
+
+/* line 138, ../sass/style.sass */
+.container {
+  background: white;
+  padding: 0.5em;
+  -webkit-box-shadow: rgba(86, 86, 86, 0.4) 0 0 25px, rgba(86, 86, 86, 0.2) 0 0 3px 1px inset;
+  -moz-box-shadow: rgba(86, 86, 86, 0.4) 0 0 25px, rgba(86, 86, 86, 0.2) 0 0 3px 1px inset;
+  box-shadow: rgba(86, 86, 86, 0.4) 0 0 25px, rgba(86, 86, 86, 0.2) 0 0 3px 1px inset;
+}
+
+/* line 143, ../sass/style.sass */
+.site-header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 200px;
+  background: url(../img/charles-header.jpg);
+  -webkit-box-shadow: rgba(86, 86, 86, 0.4) 0 0 25px, rgba(86, 86, 86, 0.2) 0 0 3px 1px inset;
+  -moz-box-shadow: rgba(86, 86, 86, 0.4) 0 0 25px, rgba(86, 86, 86, 0.2) 0 0 3px 1px inset;
+  box-shadow: rgba(86, 86, 86, 0.4) 0 0 25px, rgba(86, 86, 86, 0.2) 0 0 3px 1px inset;
+  text-align: center;
+}
+/* line 151, ../sass/style.sass */
+.site-header h1 {
+  padding: 0.6em 0 0 0;
+  font-size: 50px;
+  font-size: 5rem;
+  color: #d24916;
+  text-shadow: 0px 1px 3px rgba(210, 73, 22, 0.6);
+  margin: 0.15em 0 0.3em 0;
+}
+/* line 157, ../sass/style.sass */
+.site-header .description {
+  padding: 0 1em 0 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-shadow: rgba(236, 236, 236, 0.5) 1px 1px 0;
+}
+
+@media only screen and (min-width: 480px) {
+  /* line 166, ../sass/style.sass */
+  .container {
+    background: white;
+  }
+}
+@media only screen and (min-width: 600px) {
+  /* line 172, ../sass/style.sass */
+  .container {
+    background: white;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* line 177, ../sass/style.sass */
+  .container {
+    background: white;
+  }
+}
+@media only screen and (min-width: 992px) {
+  /* line 182, ../sass/style.sass */
+  body {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+
+  /* line 186, ../sass/style.sass */
+  .container {
+    background: white;
+  }
+}
+@media only screen and (min-width: 1382px) {
+  /* line 192, ../sass/style.sass */
+  .container {
+    background: white;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* line 197, ../sass/style.sass */
+  .container {
+    background: white;
+  }
+}

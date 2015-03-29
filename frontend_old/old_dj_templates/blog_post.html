@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load markup %}
+
+{% block content %}
+<article>
+    <header>
+        <h1>{{ Post.title }}</h1>
+        <time datetime='{{ Post.published|date:"c" }}'>
+            {{ Post.published|date:"N j Y" }}
+        </time>
+    </header>
+    <p>{{ Post.intro }}</p>
+    <p>{{ Post.content|safe }}</p>
+
+    <footer>
+        By {{ Post.author }}
+    </footer>
+</article>
+{% endblock %}

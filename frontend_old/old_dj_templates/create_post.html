@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<style>
+    #dropzone {
+        float: left;
+        width: 50%;
+        height: 250px;
+        background: yellow;
+        display: block;
+        position: relative;
+    }
+    #result {
+        width: 50%;
+        height: 250px;
+        background: lightgray;
+        float: right;
+        overflow: scroll;
+    }
+    #result * {
+        font-size: 8px;
+    }
+    .drop-n-preview {
+        width: 100%;
+        height: 250px;
+        background: grey;
+    }
+    .clear {
+        clear: both;
+    }
+    .v-center {
+        position: absolute;
+        bottom: 50%;
+        text-align: center;
+        width: 100%;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="drop-n-preview">
+    <div id="dropzone">
+        <em class="v-center">Drag a reStructuredText file here</em>
+    </div>
+    <div id="result"></div>
+</div>
+{#<div class="clear"></div>#}
+
+
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="submit">
+    </form>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/jquery.cookie.js' %}"></script>
+<script>
+var csrftoken = $.cookie('csrftoken');
+$('#dropzone').filedrop({
+    fallback_id: 'upload_button',
+    url: '{% url "create-post" %}',
+    paramname: 'userfile',
+    withCredentials: true,
+    requestType: 'POST',
+    headers: {"X-CSRFToken": csrftoken},
+    error: function(err, file) {
+        switch(err) {
+            case 'BrowserNotSupported':
+                alert('browser does not support HTML5 drag and drop')
+                break;
+            case 'TooManyFiles':
+                break;
+            case 'FileTooLarge':
+                break;
+            case 'FileTypeNotAllowed':
+                break;
+            default:
+                break;
+        }
+    },
+    docOver: function() {
+    },
+    dropLeave: function() {
+    },
+    drop: function() {
+        //xhr.setRequestHeader();
+    },
+    uploadStarted: function(i, file, len) {
+    },
+    uploadFinished: function(i, file, response, time) {
+        $('#id_content').val( response['content'] );
+        $('#result').append( response['content'] );
+    },
+    globalProgressUpdated: function(progress) {
+    },
+    afterAll: function() {
+        
+    }
+});
+</script>
+{% endblock %}

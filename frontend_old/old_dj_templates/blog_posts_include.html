@@ -1,0 +1,10 @@
+{% load humanize %}
+{% load url from future %}
+<ul role="navigation" class="blog-posts">
+{% for Post in Posts %}
+    <li>
+        <a href="{% url 'post' Post.id Post.slug %}">{{ Post.title }}</a>
+        {{ Post.published|naturaltime }}
+    </li>
+{% endfor %}
+</ul>

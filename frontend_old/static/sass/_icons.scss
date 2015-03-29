@@ -1,0 +1,57 @@
+@import "settings";
+@import "colors";
+
+/* font-face */
+@include face;
+
+/* global foundicon styles */
+[class*="#{$classPrefix}"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: inherit;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0 0;
+  background-repeat: repeat;
+  color: rgba($dark-grey, .2)
+}
+
+[class*="#{$classPrefix}"]:before {
+  font-family: $fontName;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+}
+
+.foundicon-resume:before {
+    content: '\006D';
+}
+
+.foundicon-twitter:before {
+    content: '\00E5';
+}
+
+.foundicon-linkedin:before {
+    content: '\00E7';
+}
+
+.foundicon-github:before {
+    content: '\0052';
+}
+
+.foundicon-bitbucket:before {
+    content: '\005F';
+}
+
+.foundicon-tumblr:before {
+    content: '\0052';
+}
+
+.foundicon-google-plus:before {
+    content: '\0050';
+}
+
+.foundicon-delicious:before {
+    content: '\006F';
+}
