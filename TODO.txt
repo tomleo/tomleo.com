@@ -1,0 +1,12 @@
+
+
+Finish:
+http://code.tutsplus.com/tutorials/single-page-todo-application-with-backbonejs--cms-21417
+
+Look at:
+Backbone: http://www.korenlc.com/backbone-js-tutorial-getting-started-with-backbone
+Backbone: http://thinkingonthinking.com/fast-start-with-backbonejs/
+Backbone: https://blog.safaribooksonline.com/2014/11/09/level-backbone-js-javascript/
+React & Backbone: http://www.toptal.com/front-end/simple-data-flow-in-react-applications-using-flux-and-backbone
+Backbone Flux React: http://dev.hubspot.com/blog/moving-backbone-to-flux-react
+

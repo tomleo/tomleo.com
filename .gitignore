@@ -8,3 +8,4 @@ config/
 *.sqlite3
 .coverage
 tomleo/.tox/
+frontend/js/vendor/*
