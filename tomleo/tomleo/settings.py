@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-PROJ_DIR = os.path.abspath(os.path.join(BASE_DIR, '../config'))
+PROJ_DIR = os.path.abspath(os.path.join(BASE_DIR, '../'))
+CONFIG_DIR = os.path.abspath(os.path.join(BASE_DIR, '../config'))
 
 from yaml import load, dump
 try:
@@ -20,7 +21,7 @@ except ImportError:
     from yaml import Loader, Dumper
 
 conf_settings = None
-with open(os.path.join(PROJ_DIR, 'secrets.yml'), 'r') as f:
+with open(os.path.join(CONFIG_DIR, 'secrets.yml'), 'r') as f:
     conf_settings = load(f, Loader=Loader)
 
 
@@ -43,6 +44,22 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = conf_settings.get('installed_apps')
 MIDDLEWARE_CLASSES = conf_settings.get('middleware_classes')
 
+TEMPLATE_DIRS = (
+    os.path.abspath(os.path.join(BASE_DIR, 'base_templates')),
+)
+if DEBUG:
+    TEMPLATE_LOADERS = (
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )
+else:
+    TEMPLATE_LOADERS = (
+        ('django.template.loaders.cached.Loader', (
+            'django.template.loaders.filesystem.Loader',
+            'django.template.loaders.app_directories.Loader',
+        )),
+    )
+
 ROOT_URLCONF = 'tomleo.urls'
 
 WSGI_APPLICATION = 'tomleo.wsgi.application'
@@ -63,15 +80,10 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
