@@ -11,3 +11,4 @@ pytest-cov==1.8.1
 pytest-django==2.8.0
 pytest-xdist==1.11
 docutils==0.12
+tox==1.9.2
